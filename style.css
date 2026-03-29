@@ -1,0 +1,217 @@
+body {
+    background: #141414; /* Define a cor de fundo da página */
+    color: #fff; /* Define a cor do texto principal */
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* Define a fonte usada no site */
+    margin: 0; /* Remove a margem padrão do body */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos toda a altura da tela */
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.light-mode {
+    background: #f3f3f3;
+    color: #111;
+}
+
+body.light-mode h1,
+body.light-mode figcaption {
+    color: #111;
+}
+
+body.light-mode img {
+    border-color: #888;
+}
+
+body.light-mode img:hover {
+    border: 1px solid #111;
+}
+
+body.light-mode #theme-toggle {
+    background: #fff;
+    color: #111;
+    border: 1px solid #ccc;
+}
+
+main {
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    min-height: 100vh; /* Garante altura mínima de 100% da tela */
+}
+
+h1 {
+    font-size: 2.5rem; /* Define o tamanho da fonte do título */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-bottom: 2rem; /* Espaço abaixo do título */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+#theme-toggle {
+    margin-bottom: 1.2rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    background: #222;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+#theme-toggle:hover {
+    background: #333;
+}
+
+section[aria-label="Perfis disponíveis"] {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 600px; /* Limita a largura máxima */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza os perfis */
+}
+
+nav.profiles {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav.profiles ul,
+nav.profiles ol,
+nav.profiles li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+/* Layout horizontal dos perfis dentro da lista interna */
+nav.profiles > ul > li > ul {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+nav.profiles > ul > li > ul > li {
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #fff; /* Cor do texto dos links */
+    transition: transform 0.2s, box-shadow 0.2s; /* Suaviza animações de transformação e sombra */
+}
+
+figure {
+    margin: 0; /* Remove margem padrão */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Organiza em coluna */
+    align-items: center; /* Centraliza itens */
+}
+
+img {
+    width: 120px; /* Largura fixa da imagem */
+    height: 120px; /* Altura fixa da imagem */
+    border-radius: 8px; /* Bordas arredondadas */
+    object-fit: cover; /* Mantém proporção da imagem */
+    margin-bottom: 0.5rem; /* Espaço abaixo da imagem */
+    background: #222; /* Cor de fundo da imagem */
+    display: block; /* Exibe como bloco */
+    border: 1px transparent; /* Borda inicial invisível */
+}
+
+img:hover {
+    border: 1px solid #fff; /* Borda branca ao passar o mouse */
+}
+
+figcaption {
+    font-size: 1.1rem; /* Tamanho da fonte da legenda */
+    font-weight: 500; /* Peso da fonte */
+    margin-top: 0.5rem; /* Espaço acima da legenda */
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+}
+
+/* === Responsividade para vários dispositivos === */
+
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    section[aria-label="Perfis disponíveis"] {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    nav.profiles > ul > li > ul {
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+
+    .profile {
+        flex: 1 1 40%;
+        max-width: 170px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    figcaption {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 901px) {
+    nav.profiles > ul > li > ul {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 600px) {
+    nav.profiles {
+        gap: 0.8rem;
+    }
+
+    .profile {
+        flex: 1 1 48%;
+        max-width: 145px;
+    }
+
+    img {
+        width: 90px;
+        height: 90px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    figcaption {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    section[aria-label="Perfis disponíveis"] {
+        max-width: 720px;
+    }
+
+    nav.profiles {
+        gap: 2.5rem;
+    }
+
+    img {
+        width: 140px;
+        height: 140px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
