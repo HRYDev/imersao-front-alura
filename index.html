@@ -4,21 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
+        <button id="theme-toggle" aria-label="Alternar modo claro/escuro">🌙 Modo Escuro</button>
         <h1>Quem está assistindo?</h1>
-        <div class="profiles">
-            <div class="profile">
-                <img src="/assets/perfil-1.jpg" alt="Perfil 1">
-                <p>Perfil 1</p>
-            </div>
-            <div class="profile">
-                <img src="/assets/perfil-2.jpg" alt="Perfil 2">
-                <p>Perfil 2</p>
-            </div>
-        </div>
-
+        <section aria-label="Perfis disponíveis">
+            <nav class="profiles">
+                <ul>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#" class="profile">
+                                    <figure>
+                                        <img src="assets/perfil-1.jpg" alt="golfinho">
+                                        <figcaption>rodolfo</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="profile">
+                                    <figure>
+                                        <img src="assets/perfil-2.jpg" alt="enguia e amiga">
+                                        <figcaption>amigas#sempre</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="profile">
+                                    <figure>
+                                        <img src="assets/perfil-3.jpg" alt="baleia orca">
+                                        <figcaption>amaya</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="profile">
+                                    <figure>
+                                        <img src="assets/perfil-4.jpg" alt="peixe azul">
+                                        <figcaption>ラスト」の</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
